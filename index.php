@@ -32,6 +32,9 @@
 <div class=" row justify-content-center m-0 p-0 ">
 <div class="col-12 col-lg-8 m-0 p-0 rounded-5 bg-light my-5 shadow row justify-content-center"></div>
 </div>
+
+<a href="admin.php">admin</a>
+
 <?php
     require "footer.php";
 ?>
