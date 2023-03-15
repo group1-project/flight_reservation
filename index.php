@@ -4,15 +4,16 @@ require "connection.php";
 ?>
 <!-- Image and text -->
 <div class="container-fluid main_grad m-0 p-0">
-  <nav class="navbar row justify-content-around justify-content-start justify-content-lg-around p-0 m-0 py-3 sticky-top">
-    <div class=" col-12 text-center text-lg-start col-lg-6 p-0 m-0">
+  <nav class="navbar row justify-content-around justify-content-start justify-content-lg-around p-0 m-0 pt-5 sticky-top">
+    <div class=" col-12 text-center text-lg-start col-lg-10 p-0 m-0">
       <a class="navbar-brand  " href="#">
-        <img src="images/logo2.png" alt="Logo" class="d-inline-block  rounded-5 wid">
+        <img src="images/logo2.png" alt="Logo" class="d-inline-block  rounded-5 firstwidth">
         <span class="text-light fw-bold"> AMATMA </span>
         <span class="text-danger">Airlines</span>
       </a>
     </div>
-    <div class=" col-5 col-lg-3 p-0 m-0 text-center mt-3 mt-lg-0">
+  </nav>
+  <div class=" col-5 col-lg-11 p-0 m-0 text-center text-lg-end mt-3 mt-lg-0 ">
       <!-- Button trigger modal  for registration-->
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
         SIGN UP
@@ -49,7 +50,6 @@ require "connection.php";
       <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal1">
         LOGIN
       </button>
-      <a href="admin.php">ADMIN</a>
       <!-- login modal -->
       <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -71,8 +71,7 @@ require "connection.php";
           </div>
         </div>
       </div>
-    </div>
-  </nav>
+  </div>
   <div class="container-fluid">
     <div class="row justify-content-center m-0 p-0 margin-top">
       <p class="header_fond  text-center">We make the dream of your journey!</p>
@@ -112,7 +111,7 @@ require "connection.php";
         </div>
         <div class="col-8  col-lg-2 text-center py-3 my-3 border">
           <p class="text-muted fw-bold">Departure</p>
-
+          <input type="date" class="py-2 my-3 border-0" placeholder="Enter the date">
         </div>
         <div class="col-8  col-lg-3 text-center py-3 my-3 border">
           <p class="text-muted fw-bold">Travellers and classes</p>
