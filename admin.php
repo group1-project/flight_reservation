@@ -40,142 +40,364 @@ require "connection.php";
         <div class="tab-content" id="myTabContent">
 
             <div class="tab-pane fade active show" id="airport" role="tabpanel" aria-labelledby="home-tab">
-                <div class="container w-50 py-5">
+                
+                <div><h2 class="text-center text-light">AIRPORT DETAILS</h2></div>
+		<div class="container mt-3 w-50">
+			<div class="d-flex justify-content-evenly">
+				<div class="mt-4">
+					<form action="" method="POST">
+						<div class="mb-3">
+							<input
+								type="text"
+								placeholder="Airport Name"
+								name="airport_name"
+								class="form-control"
+								required
+							/>
+						</div>
+						<div class="mb-3">
+							<input
+								type="text"
+								placeholder="Abbr"
+								name="abbr"
+								class="form-control"
+								required
+							/>
+						</div>
+						<div class="mb-3">
+							<select name="s_id" id="">
+								<option value="" disabled selected>
+									Select State
+								</option>
+								<option value=""></option>
+							</select>
+						</div>
+					</form>
+				</div>
+				<div class="p-4">
+					<div>
+						<input
+							type="submit"
+							value="ADD"
+							class="btn btn-primary w-100 p-0"
+						/>
+					</div>
+					<div class="mt-3">
+						<input
+							type="submit"
+							value="Update"
+							class="btn btn-success w-100 p-1"
+						/>
+					</div>
+					<div class="mt-3">
+						<input
+							type="submit"
+							value="Delete"
+							class="btn btn-danger w-100 p-1"
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mt-3 w-100 mx-auto">
+			<table class="table table-primary table-striped border border-2">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Airport Name</th>
+						<th>Abbr</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>
+							<a class="btn btn-success text-light edit" href=""
+								>Edit</a
+							>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 
-                    <form method="POST" >
-                        <div class="mb-3">
-
-                            <input type="text" class="form-control" placeholder="Airport Name" id="exampleInputEmail1" aria-describedby="emailHelp">
-                        </div>
-                        <div class="mb-3">
-
-                            <input type="text" class="form-control" placeholder="Abbr" id="exampleInputPassword1">
-                        </div>
-
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
-                <table class="table table-primary table-striped border border-2">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Airport Name</th>
-                            <th>Abbr</th>
-                            <th colspan="2">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><a class="btn text-light edit" href="">Edit</a></td>
-                            <td><a class="btn btn-danger" href="" onclick="">Delete</a></td>
-                            <!-- ?=$emp->Id?
-                        ?php echo $emp->Id? -->
-                        </tr>
-                    </tbody>
-                </table>
+                
             </div>
             <div class="tab-pane fade" id="airline" role="tabpanel" aria-labelledby="profile-tab">
 
-                <div class="container w-50 ">
+                
+                   
+                <div><h2 class="text-center text-light">AIRLINE DETAILS</h2></div>
+		<div class="container mt-3 w-50">
+			<div class="d-flex justify-content-evenly">
+				<div class="mt-4">
+					<form action="" method="POST">
+						<div class="mb-3">
+							<input
+								type="text"
+								placeholder="Airline Name"
+								name="airline_name"
+								class="form-control"
+								required
+							/>
+						</div>
+					</form>
+				</div>
+				<div class="p-4">
+					<div>
+						<input
+							type="submit"
+							value="ADD"
+							class="btn btn-primary w-100 p-1"
+						/>
+					</div>
+					<div class="mt-3">
+						<input
+							type="submit"
+							value="Update"
+							class="btn btn-success w-100 p-1"
+						/>
+					</div>
+					<div class="mt-3">
+						<input
+							type="submit"
+							value="Delete"
+							class="btn btn-danger w-100 p-1"
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mt-3 w-100 mx-auto">
+			<table class="table table-primary table-striped border border-2">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Airline Name</th>
 
-                    <form>
-                        <div class="mb-3">
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+						<td></td>
 
-                            <input type="text" class="form-control" placeholder="ADD New Air line" id="exampleInputEmail1" aria-describedby="emailHelp">
-                        </div>
-
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
-                <table class="table table-primary table-striped border border-2">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Aireline</th>
-                            <th colspan="2">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td><a class="btn btn-success" href="">Edit</a></td>
-                            <td><a class="btn btn-danger" href="" onclick="">Delete</a></td>
-                            <!-- ?=$emp->Id?
-                        ?php echo $emp->Id? -->
-                        </tr>
-
-                    </tbody>
-                </table>
+						<td>
+							<a class="btn btn-success text-light edit" href=""
+								>Edit</a
+							>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
             </div>
             <div class="tab-pane fade" id="flight" role="tabpanel" aria-labelledby="contact-tab">
 
 
-                <table class="table table-primary table-striped border border-2">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Flight Name</th>
-                            <th>Total Seat</th>
-                            <th colspan="2">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><a class="btn btn-success" href="">Edit</a></td>
-                            <td><a class="btn btn-danger" href="" onclick="">Delete</a></td>
-                            <!-- ?=$emp->Id?
-                        ?php echo $emp->Id? -->
-                        </tr>
-
-                    </tbody>
-                </table>
+            <div><h2 class="text-center text-light">FLIGHT DETAILS</h2></div>
+		<div class="container mt-3 w-50">
+			<div class="d-flex justify-content-evenly">
+				<div class="mt-4">
+					<form action="" method="POST">
+						<div class="mb-3">
+							<input
+								type="text"
+								placeholder="Flight Name"
+								name="flight_name"
+								class="form-control"
+								required
+							/>
+						</div>
+						<div class="mb-3">
+							<input
+								type="text"
+								placeholder="Total Seat"
+								name="total_seat"
+								class="form-control"
+								required
+							/>
+						</div>
+						<div class="mb-3">
+							<select name="a_id" id="">
+								<option value="" disabled selected>
+									Select Airline
+								</option>
+								<option value=""></option>
+							</select>
+						</div>
+					</form>
+				</div>
+				<div class="p-4">
+					<div>
+						<input
+							type="submit"
+							value="ADD"
+							class="btn btn-primary w-100 p-1"
+						/>
+					</div>
+					<div class="mt-3">
+						<input
+							type="submit"
+							value="Update"
+							class="btn btn-success w-100 p-1"
+						/>
+					</div>
+					<div class="mt-3">
+						<input
+							type="submit"
+							value="Delete"
+							class="btn btn-danger w-100 p-1"
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mt-3 w-100 mx-auto">
+			<table class="table table-primary table-striped border border-2">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Flight Name</th>
+						<th>Total Seat</th>
+						<th>Airline</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>
+							<a class="btn btn-success text-light edit" href=""
+								>Edit</a
+							>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
             </div>
             <div class="tab-pane fade" id="route" role="tabpanel" aria-labelledby="contact-tab">
+            <div><h2 class="text-center text-light">ROUTE</h2></div>
+		<div class="container mt-3 w-50">
+			<div class="d-flex justify-content-evenly">
+				<div class="mt-4">
+					<form action="" method="POST">
+                    <div class="mb-3">
+							<select name="flight_id" id="">
+								<option value="" disabled selected>
+									Select Flight
+								</option>
+								<option value=""></option>
+							</select>
+						</div>
+						<div class="mb-3">
+							<label for="dept_date" class="text-light">Departure Date</label>
+							<input
+								type="date"
+								placeholder="Departure Date"
+								name="dept_date"
+								class="form-control mt-1"
+								required
+							/>
+						</div>
+						<div class="mb-3">
+							<label for="dept_time" class="text-light">Departure Time</label>
+							<input
+								type="time"
+								placeholder="Departure Date"
+								name="dept_time"
+								class="form-control mt-1"
+								required
+							/>
+						</div>
+						<div class="mb-3">
+							<label for="arr_date" class="text-light">Arrival Date</label>
+							<input
+								type="date"
+								placeholder="Arrival Date"
+								name="arr_date"
+								class="form-control mt-1"
+								required
+							/>
+						</div>
+						<div class="mb-3">
+							<label for="arr_time" class="text-light">Arrival Time</label>
+							<input
+								type="time"
+								placeholder="Arrival Time"
+								name="arr_time"
+								class="form-control mt-1"
+								required
+							/>
+						</div>
+						
+					</form>
+				</div>
+				<div class="p-5 row align-self-center">
+					<div>
+						<input
+							type="submit"
+							value="ADD"
+							class="btn btn-primary w-50 p-0"
+						/>
+					</div>
+					<div class="mt-3">
+						<input
+							type="submit"
+							value="Update"
+							class="btn btn-success w-50 p-0"
+						/>
+					</div>
+					<div class="mt-3">
+						<input
+							type="submit"
+							value="Delete"
+							class="btn btn-danger w-50 p-0"
+						/>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="mt-3 w-100 mx-auto">
+			<table class="table table-primary table-striped border border-2">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Departure Date</th>
+						<th>Departure Time</th>
+						<th>Arrival Date</th>
+						<th>Arrival Time</th>
+						<th>Flight Name</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td>
+							<a class="btn btn-success text-light edit" href=""
+								>Edit</a
+							>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 
-
-                <table class="table table-primary table-striped border border-2">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Flight Name</th>
-                            <th>Departure</th>
-                            <th>Arrival</th>
-                            <th>Departre Date</th>
-                            <th>Arrival Date</th>
-                            <th>Departre time</th>
-                            <th>Arrival time</th>
-                            <th colspan="2">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><a class="btn btn-success" href="">Edit</a></td>
-                            <td><a class="btn btn-danger" href="" onclick="">Delete</a></td>
-                            <!-- ?=$emp->Id?
-                        ?php echo $emp->Id? -->
-                        </tr>
-
-                    </tbody>
-                </table>
+                
             </div>
             <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
 

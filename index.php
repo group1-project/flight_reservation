@@ -28,7 +28,7 @@ require "connection.php";
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <label>Email</label>
+              <label>Name</label>
               <input type="text" class="form-control" placeholder="Name" aria-label="Username" aria-describedby="basic-addon1" class="mx-3">
               <label>Email</label>
               <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" name="email" class="mt-2">
