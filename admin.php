@@ -4,27 +4,25 @@ require "connection.php";
 ?>
 <!-- Image and text -->
 <div class="container-fluid main_grad">
-    <nav class="navbar row justify-content-around justify-content-start justify-content-lg-around p-0 m-0 py-3">
-        <div class=" col-6 col-lg-6 p-0 m-0">
+    <nav class="navbar row justify-content-around justify-content-start justify-content-lg-around p-0 m-0 py-3 pb-5">
+        <div class=" col-6 col-lg-6 p-0 m-0 pb-5">
             <a class="navbar-brand  " href="#">
                 <img src="images/logo2.png" alt="Logo" class="d-inline-block  rounded-5 wid">
                 <span class="text-light fw-bold"> AMATMA </span>
                 <span class="text-danger">Airlines</span>
             </a>
         </div>
-        <div class=" col-5 col-lg-3 p-0 m-0 text-center">
+        <div class=" col-5 col-lg-3 p-0 m-0 text-center pb-5">
             <button type="submit" class="btn btn-outline-light">SignUp</button>
             <button type="submit" class="btn btn-outline-light">Login</button>
         </div>
     </nav>
 
-    <div class=" row justify-content-center m-0 p-0 ">
-        <div class="col-12 col-lg-8 m-0 p-0 rounded-5 bg-light my-5 shadow row justify-content-center"></div>
-    </div>
+   
 </div>
 
 <div class="container">
-    <div class="bd-example">
+    <div class="bd-example margin-bottom">
         <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
                 <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#airport" type="button" role="tab" aria-controls="home" aria-selected="true">Airport</button>
@@ -42,9 +40,9 @@ require "connection.php";
         <div class="tab-content" id="myTabContent">
 
             <div class="tab-pane fade active show" id="airport" role="tabpanel" aria-labelledby="home-tab">
-                <div class="container w-50 ">
+                <div class="container w-50 py-5 ">
 
-                    <form>
+                    <form method="POST" >
                         <div class="mb-3">
 
                             <input type="text" class="form-control" placeholder="Airport Name" id="exampleInputEmail1" aria-describedby="emailHelp">

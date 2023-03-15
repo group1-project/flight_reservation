@@ -15,6 +15,9 @@
 .margin-top {
 	margin-bottom: -5% !important;
 }
+.margin-bottom {
+	margin-top: -3%;
+}
 .edit {
 	background-color: blue;
 	color: aliceblue;
