@@ -15,7 +15,12 @@
 .margin-top {
 	margin-bottom: -5% !important;
 }
-.edit{
+.edit {
 	background-color: blue;
 	color: aliceblue;
+}
+.header_fond {
+	font-family: "Caveat", cursive;
+	font-size: 60px !important;
+	color: rgb(50, 131, 181);
 }
