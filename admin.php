@@ -40,24 +40,23 @@ require "connection.php";
             </li>
         </ul>
         <div class="tab-content" id="myTabContent">
-            <div class="container w-50 ">
 
-                <form>
-                    <div class="mb-3">
-
-                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                        <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-                    </div>
-                    <div class="mb-3">
-
-                        <input type="password" class="form-control" id="exampleInputPassword1">
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
             <div class="tab-pane fade active show" id="airport" role="tabpanel" aria-labelledby="home-tab">
+                <div class="container w-50 ">
 
+                    <form>
+                        <div class="mb-3">
+
+                            <input type="text" class="form-control" placeholder="Airport Name" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+                        <div class="mb-3">
+
+                            <input type="text" class="form-control" placeholder="Abbr" id="exampleInputPassword1">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
                 <table class="table table-primary table-striped border border-2">
                     <thead>
                         <tr>
@@ -85,7 +84,17 @@ require "connection.php";
             </div>
             <div class="tab-pane fade" id="airline" role="tabpanel" aria-labelledby="profile-tab">
 
+                <div class="container w-50 ">
 
+                    <form>
+                        <div class="mb-3">
+
+                            <input type="text" class="form-control" placeholder="ADD New Air line" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
                 <table class="table table-primary table-striped border border-2">
                     <thead>
                         <tr>
