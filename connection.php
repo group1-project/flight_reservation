@@ -9,4 +9,4 @@ try {
 } catch (PDOException) {
     // echo"<p class='text-light bg-danger m-0'>Connection Interrupted!</p>";
 }
-session_start();
+

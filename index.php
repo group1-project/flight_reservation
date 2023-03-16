@@ -45,7 +45,7 @@ if(isset($_POST['register'])){
             }
             else{
                 $_SESSION['email']=$email;
-                header("Location:userpage.html");
+                header("Location:user/user_dashboard.php");
             }
         }
 }
