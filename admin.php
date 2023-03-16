@@ -28,71 +28,27 @@
 </div>
 
 <div class="container">
-    <div class="bd-example margin-bottom main_grad mt-5 rounded-3">
-        <ul class="nav nav-tabs mb-3" id="myTab" role="tablist" class="">
-            <li class="nav-item" role="presentation">
-                <button
-                    class="nav-link active text-danger"
-                    id="home-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#airport"
-                    type="button"
-                    role="tab"
-                    aria-controls="home"
-                    aria-selected="true"
-                >
-                    Airport
-                </button>
+    <div class="bs-example margin-bottom main_grad mt-5 rounded-3">
+        <ul class="nav nav-tabs mb-3" id="myTab" >
+            <li class="nav-item" >
+                    <a href="#airport" class="nav-link text-danger active" data-bs-toggle="tab"> Airport </a>
             </li>
-            <li class="nav-item" role="presentation">
-                <button
-                    class="nav-link text-danger"
-                    id="profile-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#airline"
-                    type="button"
-                    role="tab"
-                    aria-controls="profile"
-                    aria-selected="false"
-                >
-                    Airline
-                </button>
+            <li class="nav-item" >
+                    <a href="#airline" class="nav-link text-danger" data-bs-toggle="tab"> Airline </a>
             </li>
-            <li class="nav-item" role="presentation">
-                <button
-                    class="nav-link text-danger"
-                    id="contact-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#flight"
-                    type="button"
-                    role="tab"
-                    aria-controls="contact"
-                    aria-selected="false"
-                >
-                    Flight
-                </button>
+            
+            <li class="nav-item" >
+                    <a href="#flight" class="nav-link text-danger" data-bs-toggle="tab"> Flight </a>
             </li>
-            <li class="nav-item" role="presentation">
-                <button
-                    class="nav-link text-danger"
-                    id="contact-tab"
-                    data-bs-toggle="tab"
-                    data-bs-target="#route"
-                    type="button"
-                    role="tab"
-                    aria-controls="contact"
-                    aria-selected="false"
-                >
-                    Route
-                </button>
+            <li class="nav-item" >
+                    <a href="#route" class="nav-link text-danger" data-bs-toggle="tab"> Route </a>
             </li>
         </ul>
         <div class="tab-content" id="myTabContent">
             <div
                 class="tab-pane fade active show"
                 id="airport"
-                role="tabpanel"
-                aria-labelledby="home-tab"
+                
             >
                 <div>
                     <h2 class="text-center text-light">AIRPORT DETAILS</h2>
@@ -186,10 +142,7 @@
 			<!-- Airline details start -->
             <div
                 class="tab-pane fade"
-                id="airline"
-                role="tabpanel"
-                aria-labelledby="profile-tab"
-            >
+                id="airline">
                 <div>
                     <h2 class="text-center text-light">AIRLINE DETAILS</h2>
                 </div>

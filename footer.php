@@ -9,6 +9,6 @@
 			integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
 			crossorigin="anonymous"
 ></script>
-<script src="js/script.js"></script>
+<script src="JS/script.js"></script>
 </body>
 </html>
