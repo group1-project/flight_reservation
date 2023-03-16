@@ -1,6 +1,56 @@
 <?php
-require "header.php";
 require "connection.php";
+session_start();
+require "header.php";
+
+
+// user registration
+if(isset($_POST['register'])){
+  $name=$_POST['name'];
+  $email=$_POST['email'];
+  $pass=$_POST['password'];
+  $phone=$_POST['phone'];
+  $password=md5($pass);
+  $pic=$_FILES['photo']['name'];
+  $temp=$_FILES['photo']['tmp_name'];
+  $target="uploads/".basename($pic);
+
+          $sql='INSERT INTO users(name,email,password,phone,image)VALUES(:name,:email,:password,:phone,:image)';
+          $statement=$connection->prepare($sql);
+          if( $statement->execute(['name'=>$name,':email'=>$email,':password'=>$password,':phone'=>$phone, 'image'=>$pic])){
+            $move_pic=move_uploaded_file($temp,$target);
+
+            echo"<div class='alert alert-info'>Data recorded successfully</div>";
+        }
+      }
+  // user registration end
+
+  // login code 
+  if(isset($_POST['login'])){
+    $email=$_POST['email'];
+    $password=$_POST['password'];
+
+        $sql= 'SELECT * FROM users WHERE email=:email LIMIT 1';
+        $stmt = $connection->prepare($sql);
+        $stmt -> execute(['email' => $email]);
+        $exists = $stmt->fetch(PDO :: FETCH_OBJ);
+        if(!$exists){
+            echo  "<script> Swal.fire('Enter Valid Email Id') </script>";
+        }
+        else{
+            $check_pass=$exists->password;
+            $password=md5($password);
+            if($check_pass!=$password){
+                echo  "<script> Swal.fire('Invalid Password') </script>";
+            }
+            else{
+                $_SESSION['email']=$email;
+                header("Location:userpage.html");
+            }
+        }
+}
+
+// login code end 
 ?>
 <!-- Image and text -->
 <div class="container-fluid main_grad m-0 p-0">
@@ -28,20 +78,25 @@ require "connection.php";
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
+             <form action="" method="POST" enctype="multipart/form-data">
               <label>Name</label>
-              <input type="text" class="form-control" placeholder="Name" aria-label="Username" aria-describedby="basic-addon1" class="mx-3">
+              <input type="text" class="form-control" placeholder="Name" aria-label="Username" aria-describedby="basic-addon1" name="name" class="mx-3" required>
               <label>Email</label>
-              <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" name="email" class="mt-2">
+              <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" name="email" class="mt-2" required>
               <label>Phone Number</label>
-              <input type="text" class="form-control" placeholder="Phone Number" aria-label="PhoneNumber" aria-describedby="basic-addon1" name="phone_number" class="mt-2">
+              <input type="text" class="form-control" placeholder="Phone Number" aria-label="PhoneNumber" aria-describedby="basic-addon1" name="phone" class="mt-2" required>
               <label>Password</label>
-              <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" name="password" clsass="mt-2">
+              <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" name="password" clsass="mt-2" required>
+              <label>Password</label>
+              <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" name="con_password" clsass="mt-2" required>
               <label>Profile Photo</label>
-              <input type="file" class="form-control" placeholder="Add Profile photo" aria-label="Photo" aria-describedby="basic-addon1" name="photo" value="profile photo" class="mt-2">
+              <input type="file" class="form-control" placeholder="Add Profile photo" aria-label="Photo" aria-describedby="basic-addon1" name="photo" value="profile photo" class="mt-2" required>
+            
+              <input type="submit" name="register" value="Register" class="btn btn-primary">
+             </form>
+            
             </div>
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-primary">SUBMIT</button>
-            </div>
+            
           </div>
         </div>
       </div>
@@ -59,15 +114,20 @@ require "connection.php";
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <label>User Name</label>
-              <input type="text" class="form-control" placeholder="Userame" aria-label="Username" aria-describedby="basic-addon1" class="mt-3">
+             <form action="" method="POST">
+             <label>User Name</label>
+              <input type="email" class="form-control" name="email" placeholder="Userame" aria-label="Username" aria-describedby="basic-addon1" class="mt-3">
               <label>Password</label>
-              <input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" name="password" clsass="mt-3">
+              <input type="password" class="form-control" name="password" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" name="password" clsass="mt-3">
+              
+            
+          
+              <input type="submit" class="btn btn-primary mt-3" name="login">
+
               <a href="" class="btn btn-primary mt-3">Forgot Password</a>
-            </div>
-            <div class="modal-footer">
-              <button type="submit" class="btn btn-primary">SUBMIT</button>
-            </div>
+           
+             </form>
+             </div>
           </div>
         </div>
       </div>
